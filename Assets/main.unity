@@ -307,6 +307,7 @@ MonoBehaviour:
   grounded: 0
   scaleVector: {x: 0, y: .0700000003}
   moveVector: {x: 0, y: .0399999991}
+  audioActive: 0
 --- !u!50 &268719803
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1296,7 +1297,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: c81689b6474b5c74ca188a3a22131e0f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 49.2236977
+      value: 46.7400017
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c81689b6474b5c74ca188a3a22131e0f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1909,7 +1910,7 @@ Transform:
   m_PrefabInternal: {fileID: 1212946843}
   m_GameObject: {fileID: 1943514443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.2236977, y: -6.69586658, z: 0}
+  m_LocalPosition: {x: 46.7400017, y: -6.69586658, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
