@@ -1,0 +1,322 @@
+fileFormatVersion: 2
+guid: 462d75e0a1e135047acf9bc478a85613
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RunningAnimSpriteMap_0
+    21300002: RunningAnimSpriteMap_1
+    21300004: RunningAnimSpriteMap_2
+    21300006: RunningAnimSpriteMap_3
+    21300008: RunningAnimSpriteMap_4
+    21300010: RunningAnimSpriteMap_5
+    21300012: RunningAnimSpriteMap_6
+    21300014: RunningAnimSpriteMap_7
+    21300016: RunningAnimSpriteMap_8
+    21300018: RunningAnimSpriteMap_9
+    21300020: RunningAnimSpriteMap_10
+    21300022: RunningAnimSpriteMap_11
+    21300024: RunningAnimSpriteMap_12
+    21300026: RunningAnimSpriteMap_13
+    21300028: RunningAnimSpriteMap_14
+    21300030: RunningAnimSpriteMap_15
+    21300032: RunningAnimSpriteMap_16
+    21300034: RunningAnimSpriteMap_17
+    21300036: RunningAnimSpriteMap_18
+    21300038: RunningAnimSpriteMap_19
+    21300040: RunningAnimSpriteMap_20
+    21300042: RunningAnimSpriteMap_21
+    21300044: RunningAnimSpriteMap_22
+    21300046: RunningAnimSpriteMap_23
+    21300048: RunningAnimSpriteMap_24
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 250
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: RunningAnimSpriteMap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1752
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_1
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1752
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_2
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1752
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_3
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 1752
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_4
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1752
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1314
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_6
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1314
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_7
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1314
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_8
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 1314
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_9
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1314
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 876
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_11
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 876
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_12
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 876
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_13
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 876
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_14
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 876
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 438
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_16
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 438
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_17
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 438
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_18
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 438
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_19
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 438
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_21
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 0
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_22
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 0
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_23
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 0
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RunningAnimSpriteMap_24
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 325
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

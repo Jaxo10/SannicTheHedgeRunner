@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: b8264f6e013b1f14288d67fc7b1876af
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SlideEndAnimSpriteMap_0
+    21300002: SlideEndAnimSpriteMap_1
+    21300004: SlideEndAnimSpriteMap_2
+    21300006: SlideEndAnimSpriteMap_3
+    21300008: SlideEndAnimSpriteMap_4
+    21300010: SlideEndAnimSpriteMap_5
+    21300012: SlideEndAnimSpriteMap_6
+    21300014: SlideEndAnimSpriteMap_7
+    21300016: SlideEndAnimSpriteMap_8
+    21300018: SlideEndAnimSpriteMap_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 250
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SlideEndAnimSpriteMap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlideEndAnimSpriteMap_1
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 960
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlideEndAnimSpriteMap_2
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 960
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlideEndAnimSpriteMap_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlideEndAnimSpriteMap_4
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 480
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlideEndAnimSpriteMap_5
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 480
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlideEndAnimSpriteMap_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlideEndAnimSpriteMap_7
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 0
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlideEndAnimSpriteMap_8
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 0
+        width: 403
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: 67596c59268b7024aafc530615530f7b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: JumpAnimSpriteMap_0
+    21300002: JumpAnimSpriteMap_1
+    21300004: JumpAnimSpriteMap_2
+    21300006: JumpAnimSpriteMap_3
+    21300008: JumpAnimSpriteMap_4
+    21300010: JumpAnimSpriteMap_5
+    21300012: JumpAnimSpriteMap_6
+    21300014: JumpAnimSpriteMap_7
+    21300016: JumpAnimSpriteMap_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 250
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: JumpAnimSpriteMap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 872
+        width: 319
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAnimSpriteMap_1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 873
+        width: 319
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAnimSpriteMap_2
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 876
+        width: 318
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAnimSpriteMap_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 442
+        width: 318
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAnimSpriteMap_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 445
+        width: 317
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAnimSpriteMap_5
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 448
+        width: 318
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAnimSpriteMap_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 16
+        width: 317
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAnimSpriteMap_7
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 17
+        width: 316
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAnimSpriteMap_8
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 17
+        width: 317
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
