@@ -42,6 +42,15 @@ public class Create_Menue : MonoBehaviour {
 				gameObject.AddComponent<Create_Setting>();
 				Destroy(this);
 			}
+            if (GUILayout.Button("Highscores"))
+            {
+
+                //showMenue = false;
+                //CS.showSettings = true;
+
+                gameObject.AddComponent<Create_HS>();
+                Destroy(this);
+            }
 
 			GUILayout.EndVertical();
 			GUILayout.EndArea();

@@ -12,9 +12,10 @@ public class Game_Over : MonoBehaviour {
 
 	
 	public void GameOver (int HighScore){
-		HighS = HighScore;
+        gameObject.AddComponent<HS_Manager>();
+        HS_Manager manager = (HS_Manager) gameObject.GetComponent(typeof(HS_Manager));
 
-		//todo: Save HighScore
+        manager.seths(PlayerPrefs.GetString("name"), HighScore);
 	}
 
 
