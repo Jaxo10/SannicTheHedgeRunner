@@ -3,6 +3,9 @@ using System.Collections;
 using Newtonsoft.Json;
 using System.Net;
 using System.IO;
+using System.Text;
+using System.Security.Cryptography;
+using System;
 
 public class HS_Manager : MonoBehaviour {
 
@@ -21,7 +24,19 @@ public class HS_Manager : MonoBehaviour {
 	}
 	
 	public void seths (string name, int score, string UID) {
-        WebRequest request = WebRequest.Create("http://motes.at/hrunnerhs.php?action=seths&name="+name+"&score="+score.ToString()+"&uid="+UID);
+        
+        string code = UID + score.ToString().Substring(1);
+
+        StringBuilder sb = new StringBuilder();
+        MD5 md5Hasher = MD5.Create();
+        byte[] tempSource = Encoding.ASCII.GetBytes(code);
+            foreach (Byte b in md5Hasher.ComputeHash(tempSource))
+                sb.Append(b.ToString("x2").ToLower());
+
+        code = sb.ToString();
+
+
+        WebRequest request = WebRequest.Create("http://motes.at/hrunnerhs.php?action=seths&name="+name+"&score="+score.ToString()+"&uid="+UID+"&code="+code);
         WebResponse response = request.GetResponse();
         response.Close();
 	}
