@@ -30,18 +30,27 @@ public class Create_HS : MonoBehaviour {
         GUILayout.Box("High Scores");
 
         ScrollPosition = GUILayout.BeginScrollView(ScrollPosition, false, true, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
-
+	int HScounter = 0;
+	
         foreach (Score element in myHS.Scores)
         {
-            GUILayout.BeginHorizontal();
+          HScounter++;
+          
+          if(HScounter < 9 && element.uid == PlayerPrefs.GetString("uniqueUID")){
+          	writeHS(HScounter, element, true);
+          	break;
+          }
+          else if(element.uid == PlayerPrefs.GetString("uniqueUID")){
+          	writeHS(HScounter, element, true);
+          	break;
+          }
+          else if(HScounter < 9){
+            writeHS(HScounter, element, false);
 
-            GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-            GUILayout.Label(element.name);
+          }
+          
 
-            GUI.skin.label.alignment = TextAnchor.MiddleRight;
-            GUILayout.Label(element.score);
-
-            GUILayout.EndHorizontal();
+            
         }
 
         GUILayout.EndScrollView();
@@ -58,5 +67,19 @@ public class Create_HS : MonoBehaviour {
 
         GUILayout.EndArea();
 
+    }
+    
+    writeHS(int rank, Score element, bool red){
+            GUILayout.BeginHorizontal();
+            
+            if(red) GUI.skin.label.normal.textColor = Color.red;
+
+            GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+            GUILayout.Label(rank.ToString()+". "+element.name);
+
+            GUI.skin.label.alignment = TextAnchor.MiddleRight;
+            GUILayout.Label(element.score);
+
+            GUILayout.EndHorizontal();
     }
 }
