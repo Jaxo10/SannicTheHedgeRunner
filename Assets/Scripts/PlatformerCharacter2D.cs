@@ -67,7 +67,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     void dead()
     {
         isDead = true;
-
+        if (audio.isPlaying) audio.Stop();
         Time.timeScale = 0;
         GameObject MO = GameObject.Find("AMenueObject");
         MO.AddComponent<Game_Over> ();
