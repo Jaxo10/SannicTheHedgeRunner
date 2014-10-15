@@ -15,7 +15,7 @@ public class Game_Over : MonoBehaviour {
         gameObject.AddComponent<HS_Manager>();
         HS_Manager manager = (HS_Manager) gameObject.GetComponent(typeof(HS_Manager));
 
-        manager.seths(PlayerPrefs.GetString("name"), HighScore);
+        manager.seths(PlayerPrefs.GetString("name"), HighScore, PlayerPrefs.GetString("uniqueID"));
 	}
 
 
