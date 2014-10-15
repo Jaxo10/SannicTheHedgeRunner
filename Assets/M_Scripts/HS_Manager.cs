@@ -20,8 +20,8 @@ public class HS_Manager : MonoBehaviour {
         return hslist;
 	}
 	
-	public void seths (string name, int score) {
-        WebRequest request = WebRequest.Create("http://motes.at/hrunnerhs.php?action=seths&name="+name+"&score="+score.ToString());
+	public void seths (string name, int score, string UID) {
+        WebRequest request = WebRequest.Create("http://motes.at/hrunnerhs.php?action=seths&name="+name+"&score="+score.ToString()+"&uid="+UID);
         WebResponse response = request.GetResponse();
         response.Close();
 	}
