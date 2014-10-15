@@ -6,6 +6,17 @@ public class Create_Menue : MonoBehaviour {
 	//public GUISkin MenueSkin;
 	//public bool showMenue;
 	//public Create_Setting CS;
+	
+	void Start (){
+		
+		if(!PlayerPrefs.HasKey("uniqueUID")){
+			
+			//todo: hash a UID
+			string hash = "i834numdw38";
+			PlayerPrefs.SetString("uniqueUID", hash);
+		}
+		
+	}
 
 	void OnGUI (){
 
