@@ -5,17 +5,20 @@ public class Game_Over : MonoBehaviour {
 
 	//public GUISkin MenueSkin;
 	//public bool showOver;
-	public int HighS;
 	//public Create_Menue CM;
 	//public Name Nam;
 	//public string playerName;
+    HS_Object myHS;
+    string uid;
+    int score;
 
 	
 	public void GameOver (int HighScore){
         gameObject.AddComponent<HS_Manager>();
         HS_Manager manager = (HS_Manager) gameObject.GetComponent(typeof(HS_Manager));
 
-        manager.seths(PlayerPrefs.GetString("name"), HighScore, PlayerPrefs.GetString("uniqueID"));
+        manager.seths(PlayerPrefs.GetString("name"), HighScore, PlayerPrefs.GetString("uniqueUID"));
+        score = HighScore;
 	}
 
 
@@ -29,6 +32,11 @@ public class Game_Over : MonoBehaviour {
 				Destroy (this);
 		}
 
+        gameObject.AddComponent<HS_Manager>();
+        HS_Manager manager = (HS_Manager)gameObject.GetComponent(typeof(HS_Manager));
+
+        myHS = manager.geths();
+        uid = PlayerPrefs.GetString("uniqueUID");
 	}
 
 	void OnGUI (){
@@ -44,6 +52,31 @@ public class Game_Over : MonoBehaviour {
 			
 			GUILayout.Box ("Game Over");
 			GUILayout.BeginVertical();
+
+            GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+            GUILayout.Label("You've reached " + score.ToString() + " Points!");
+
+            int rank = 0;
+
+            foreach (Score element in myHS.Scores)
+            {
+                rank++;
+
+                if (element.uid == uid)
+                {
+                    GUILayout.BeginHorizontal();
+
+                    GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+                    GUILayout.Label(rank.ToString()+". "+element.name);
+
+                    GUI.skin.label.alignment = TextAnchor.MiddleRight;
+                    GUILayout.Label(element.score);
+
+                    GUILayout.EndHorizontal();
+                    break;
+                }
+            }
+
 
 			if(GUILayout.Button ("Restart")){
 				Time.timeScale = 1;

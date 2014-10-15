@@ -127,7 +127,7 @@ public class PlatformerCharacter2D : MonoBehaviour
             --slideFrame;
         }
 
-        Debug.Log(slide);
+        //Debug.Log(slide);
         jump = false;
     }
 

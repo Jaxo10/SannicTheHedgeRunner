@@ -6,6 +6,7 @@ public class Create_HS : MonoBehaviour {
 
 	HS_Object myHS;
     Vector2 ScrollPosition;
+    string uid;
 
 
 	void Start () {
@@ -15,6 +16,7 @@ public class Create_HS : MonoBehaviour {
 
         myHS = manager.geths();
         ScrollPosition = new Vector2();
+        uid = PlayerPrefs.GetString("uniqueUID");
 	}
 
     void OnGUI()
@@ -30,26 +32,24 @@ public class Create_HS : MonoBehaviour {
         GUILayout.Box("High Scores");
 
         ScrollPosition = GUILayout.BeginScrollView(ScrollPosition, false, true, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
-	int HScounter = 0;
+	    int HScounter = 0;
 	
         foreach (Score element in myHS.Scores)
         {
-          HScounter++;
+              HScounter++;
           
-          if(HScounter < 9 && element.uid == PlayerPrefs.GetString("uniqueUID")){
-          	writeHS(HScounter, element, true);
-          	break;
-          }
-          else if(element.uid == PlayerPrefs.GetString("uniqueUID")){
-          	writeHS(HScounter, element, true);
-          	break;
-          }
-          else if(HScounter < 9){
-            writeHS(HScounter, element, false);
+              if(HScounter < 9 && element.uid == uid){
+          	    writeHS(HScounter, element, true);
+          	    break;
+              }
+              else if(element.uid == uid){
+          	    writeHS(HScounter, element, true);
+          	    break;
+              }
+              else if(HScounter < 9){
+                writeHS(HScounter, element, false);
 
-          }
-          
-
+              }
             
         }
 
@@ -69,7 +69,7 @@ public class Create_HS : MonoBehaviour {
 
     }
     
-    writeHS(int rank, Score element, bool red){
+    void writeHS(int rank, Score element, bool red){
             GUILayout.BeginHorizontal();
             
             if(red) GUI.skin.label.normal.textColor = Color.red;
@@ -79,6 +79,8 @@ public class Create_HS : MonoBehaviour {
 
             GUI.skin.label.alignment = TextAnchor.MiddleRight;
             GUILayout.Label(element.score);
+
+            GUI.skin.label.normal.textColor = Color.white;
 
             GUILayout.EndHorizontal();
     }

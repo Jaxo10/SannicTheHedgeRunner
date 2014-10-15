@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Create_Menue : MonoBehaviour {
 
@@ -8,11 +9,10 @@ public class Create_Menue : MonoBehaviour {
 	//public Create_Setting CS;
 	
 	void Start (){
-		
-		if(!PlayerPrefs.HasKey("uniqueUID")){
-			
-			//todo: hash a UID
-			string hash = "i834numdw38";
+
+        if(!PlayerPrefs.HasKey("uniqueUID")){
+
+            string hash = Guid.NewGuid().ToString("N");
 			PlayerPrefs.SetString("uniqueUID", hash);
 		}
 		
