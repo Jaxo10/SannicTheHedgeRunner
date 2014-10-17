@@ -16,6 +16,10 @@ public class Create_Menue : MonoBehaviour {
 			PlayerPrefs.SetString("uniqueUID", hash);
 		}
 		
+	//Check if double
+	Create_Menue[] mens = gameObject.GetComponents<Create_Menue>();
+	if(mens.Lenght > 1) Destroy(this);
+	
 	}
 
 	void OnGUI (){
