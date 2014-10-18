@@ -17,9 +17,9 @@ public class PlatformerCharacter2D : MonoBehaviour
     public Transform currentPlatform;
 
     public bool grounded = false;
-    BoxCollider2D collider;								// A position marking where to check if the player is grounded.
+    BoxCollider2D MyCollider;								// A position marking where to check if the player is grounded.
     float groundedRadius = .3f;							// Radius of the overlap circle to determine if grounded								// Whether or not the player is grounded.
-    float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
+    //float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
     Animator anim;										// Reference to the player's animator component.
     bool jump, jumping, slide;
     int slideFrame;
@@ -29,7 +29,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
     void Awake()
     {
-        collider = transform.GetComponent<BoxCollider2D>();
+        MyCollider = transform.GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         speed = startingSpeed;
         isDead = false;
@@ -67,7 +67,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     void dead()
     {
         isDead = true;
-
+        if (audio.isPlaying) audio.Stop();
         Time.timeScale = 0;
         GameObject MO = GameObject.Find("AMenueObject");
         MO.AddComponent<Game_Over> ();
@@ -82,13 +82,13 @@ public class PlatformerCharacter2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        grounded = Physics2D.OverlapCircle(collider.bounds.min, groundedRadius, collideWithWhat);
+        grounded = Physics2D.OverlapCircle(MyCollider.bounds.min, groundedRadius, collideWithWhat);
         anim.SetBool("Ground", grounded);
         anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
 
         float move = speed;
 
-        Vector2 min = collider.bounds.min, max = collider.bounds.max;
+        Vector2 min = MyCollider.bounds.min, max = MyCollider.bounds.max;
         if (!slide && anim.GetBool("Slide") && Physics2D.OverlapArea(new Vector2(min.x, max.y - 0.5F), new Vector2(max.x, max.y + 0.5F), collideWithWhat)) slide = true;
         if (grounded || !slide) anim.SetBool("Slide", slide);
 
@@ -116,18 +116,18 @@ public class PlatformerCharacter2D : MonoBehaviour
 
         if (slide && slideFrame < 9)
         {
-            collider.size -= scaleVector;
-            collider.center += moveVector;
+            MyCollider.size -= scaleVector;
+            MyCollider.center += moveVector;
             ++slideFrame;
         }
         else if (!slide && slideFrame > 0)
         {
-            collider.size += scaleVector;
-            collider.center -= moveVector;
+            MyCollider.size += scaleVector;
+            MyCollider.center -= moveVector;
             --slideFrame;
         }
 
-        Debug.Log(slide);
+        //Debug.Log(slide);
         jump = false;
     }
 

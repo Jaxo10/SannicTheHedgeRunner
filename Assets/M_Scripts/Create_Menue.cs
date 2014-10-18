@@ -1,11 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Create_Menue : MonoBehaviour {
 
 	//public GUISkin MenueSkin;
 	//public bool showMenue;
 	//public Create_Setting CS;
+	
+	void Start (){
+
+        if(!PlayerPrefs.HasKey("uniqueUID")){
+
+            string hash = Guid.NewGuid().ToString("N");
+			PlayerPrefs.SetString("uniqueUID", hash);
+		}
+		
+	//Check if double
+	Create_Menue[] mens = gameObject.GetComponents<Create_Menue>();
+	if(mens.Length > 1) Destroy(this);
+	
+	}
 
 	void OnGUI (){
 
@@ -42,6 +57,15 @@ public class Create_Menue : MonoBehaviour {
 				gameObject.AddComponent<Create_Setting>();
 				Destroy(this);
 			}
+            if (GUILayout.Button("Highscores"))
+            {
+
+                //showMenue = false;
+                //CS.showSettings = true;
+
+                gameObject.AddComponent<Create_HS>();
+                Destroy(this);
+            }
 
 			GUILayout.EndVertical();
 			GUILayout.EndArea();

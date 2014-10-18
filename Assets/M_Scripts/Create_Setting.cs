@@ -22,7 +22,7 @@ public class Create_Setting : MonoBehaviour {
 
 	void OnGUI (){
 		
-		//if (showSettings) {
+
 			GUI.skin = MyGUIManager.GetSkin();
 			//float diff;
 
@@ -44,9 +44,6 @@ public class Create_Setting : MonoBehaviour {
 			toggleMusic = GUILayout.Toggle(toggleMusic, "   Music");
 
 			if (GUILayout.Button ("Back")) {
-
-				//showSettings = false;
-				//CM.showMenue = true;
 				
 				gameObject.AddComponent<Create_Menue>();
 				Destroy(this);
@@ -64,6 +61,5 @@ public class Create_Setting : MonoBehaviour {
 			GUILayout.EndVertical();
 			GUILayout.EndArea();
 
-		//}
 	}
 }

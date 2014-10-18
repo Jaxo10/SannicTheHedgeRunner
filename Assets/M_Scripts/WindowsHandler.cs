@@ -10,6 +10,9 @@ public class WindowsHandler : MonoBehaviour {
 					GameObject MO = GameObject.Find ("AMenueObject");
 					MO.AddComponent<Create_Menue> ();
 					Time.timeScale = 0;
+                    GameObject aVariable = GameObject.Find ("2D Character");
+                    AudioSource audio = (AudioSource) aVariable.GetComponents<AudioSource>()[0];
+                    if (audio.isPlaying) audio.Stop();
 				}
 	}
 
@@ -20,6 +23,9 @@ public class WindowsHandler : MonoBehaviour {
 						MO.AddComponent<Create_Menue> ();
 
 						Time.timeScale = 0;
+                        GameObject aVariable = GameObject.Find("2D Character");
+                        AudioSource audio = (AudioSource)aVariable.GetComponents<AudioSource>()[0];
+                        if (audio.isPlaying) audio.Stop();
 				}
 	}	
 
