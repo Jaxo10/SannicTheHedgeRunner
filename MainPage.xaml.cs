@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine.Windows;
-using UnityPlayer;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Display;
 using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
@@ -17,7 +17,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.Storage;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -41,11 +40,6 @@ namespace Template
 			OnResize();
 			onResizeHandler = new WindowSizeChangedEventHandler((o, e) => OnResize());
 			Window.Current.SizeChanged += onResizeHandler;
-            Window.Current.VisibilityChanged += Current_VisibilityChanged;
-
-            #if UNITY_WP_8_1
-                Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
-            #endif
 		}
 
 		/// <summary>
@@ -56,20 +50,9 @@ namespace Template
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
 			splash = (SplashScreen)e.Parameter;
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
 			OnResize();
 		}
-
-        private void Current_VisibilityChanged(Object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
-        {
-            if (!e.Visible)
-            {
-                AppCallbacks.Instance.InvokeOnAppThread(new AppCallbackItem(() =>
-                {
-                    WindowsHandler.OnNavigatedFrom();
-                }), true);
-            }
-            
-        }
 
 		private void OnResize()
 		{
@@ -142,17 +125,5 @@ namespace Template
 			return new UnityPlayer.XamlPageAutomationPeer(this);
 		}
 #endif
-
-#if UNITY_WP_8_1
-        void HardwareButtons_BackPressed(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
-        {
-            AppCallbacks.Instance.InvokeOnAppThread(new AppCallbackItem(() =>
-            {
-                WindowsHandler.BackButtonPressed();
-            }), false);
-                
-        
-        }
-#endif
-    }
+	}
 }

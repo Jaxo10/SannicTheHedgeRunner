@@ -104,7 +104,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: e55fa3e0601919940a7ee005ce33fd26, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
@@ -151,7 +151,7 @@ PlayerSettings:
   spritePackerPolicy: 
   scriptingDefineSymbols: {}
   metroPackageName: HedgeRunner
-  metroPackageLogo: 
+  metroPackageLogo: Assets/Icons/Icon50.png
   metroPackageLogo140: 
   metroPackageLogo180: 
   metroPackageLogo240: 
@@ -163,23 +163,23 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: A simple jump and run game.
   metroStoreTileLogo80: 
-  metroStoreTileLogo: 
+  metroStoreTileLogo: Assets/Icons/Icon150.png
   metroStoreTileLogo140: 
   metroStoreTileLogo180: 
   metroStoreTileWideLogo80: 
-  metroStoreTileWideLogo: 
+  metroStoreTileWideLogo: Assets/Icons/Icon310x150.png
   metroStoreTileWideLogo140: 
   metroStoreTileWideLogo180: 
   metroStoreTileSmallLogo80: 
-  metroStoreTileSmallLogo: 
+  metroStoreTileSmallLogo: Assets/Icons/Icon30.png
   metroStoreTileSmallLogo140: 
   metroStoreTileSmallLogo180: 
   metroStoreSmallTile80: 
-  metroStoreSmallTile: 
+  metroStoreSmallTile: Assets/Icons/Icon70.png
   metroStoreSmallTile140: 
   metroStoreSmallTile180: 
   metroStoreLargeTile80: 
-  metroStoreLargeTile: 
+  metroStoreLargeTile: Assets/Icons/Icon310.png
   metroStoreLargeTile140: 
   metroStoreLargeTile180: 
   metroStoreSplashScreenImage: 
@@ -187,14 +187,14 @@ PlayerSettings:
   metroStoreSplashScreenImage180: 
   metroPhoneAppIcon: 
   metroPhoneAppIcon140: 
-  metroPhoneAppIcon240: 
+  metroPhoneAppIcon240: Assets/Icons/Icon106.png
   metroPhoneSmallTile: 
   metroPhoneSmallTile140: 
-  metroPhoneSmallTile240: 
-  metroPhoneMediumTile: 
+  metroPhoneSmallTile240: Assets/Icons/Icon170.png
+  metroPhoneMediumTile: Assets/Icons/Icon150.png
   metroPhoneMediumTile140: 
   metroPhoneMediumTile240: 
-  metroPhoneWideTile: 
+  metroPhoneWideTile: Assets/Icons/Icon310x150.png
   metroPhoneWideTile140: 
   metroPhoneWideTile240: 
   metroPhoneSplashScreenImage: 
