@@ -81,6 +81,7 @@ public class Create_HS : MonoBehaviour {
             GUILayout.Label(element.score);
 
             GUI.skin.label.normal.textColor = Color.white;
+            GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 
             GUILayout.EndHorizontal();
     }

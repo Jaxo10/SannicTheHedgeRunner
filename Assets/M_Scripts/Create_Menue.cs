@@ -18,7 +18,7 @@ public class Create_Menue : MonoBehaviour {
 		
 	//Check if double
 	Create_Menue[] mens = gameObject.GetComponents<Create_Menue>();
-	if(mens.Lenght > 1) Destroy(this);
+	if(mens.Length > 1) Destroy(this);
 	
 	}
 
