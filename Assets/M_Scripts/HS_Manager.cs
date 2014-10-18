@@ -4,11 +4,12 @@ using Newtonsoft.Json;
 //using System.Net;
 //using System.IO;
 using System.Text;
-using System.Security.Cryptography;
-using System;
+//using System;
 
 #if  UNITY_METRO
 using UnityEngine.Windows;
+#else
+using System.Security.Cryptography;
 #endif
 
 public class HS_Manager : MonoBehaviour {
@@ -27,15 +28,9 @@ public class HS_Manager : MonoBehaviour {
         while (!WWrequest.isDone)
         {
         }
-        if (WWrequest.error != null)
+        if (WWrequest.isDone)
         {
-            Debug.Log("There was an error getting the high score: " + WWrequest.error);
-        }
-        else if (WWrequest.isDone)
-        {
-
             hslist = JsonConvert.DeserializeObject<HS_Object>(WWrequest.text);
-
             
         }
         return hslist;
@@ -64,7 +59,7 @@ public class HS_Manager : MonoBehaviour {
         byte[] hashBytes = Crypto.ComputeMD5Hash(System.Text.Encoding.UTF8.GetBytes(s));
         
         StringBuilder sb = new StringBuilder();
-        foreach (Byte b in hashBytes)
+        foreach (System.Byte b in hashBytes)
             sb.Append(b.ToString("x2").ToLower());
         return sb.ToString();
 
@@ -72,7 +67,7 @@ public class HS_Manager : MonoBehaviour {
         StringBuilder sb = new StringBuilder();
         MD5 md5Hasher = MD5.Create();
         byte[] tempSource = Encoding.ASCII.GetBytes(code);
-            foreach (Byte b in md5Hasher.ComputeHash(tempSource))
+            foreach (System.Byte b in md5Hasher.ComputeHash(tempSource))
                 sb.Append(b.ToString("x2").ToLower());
 
         return sb.ToString();

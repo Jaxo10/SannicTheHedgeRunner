@@ -40,9 +40,6 @@ public class Game_Over : MonoBehaviour {
 	}
 
 	void OnGUI (){
-		
-		//if (showOver) {
-
 			
 			GUI.skin = MyGUIManager.GetSkin();
 			
@@ -72,6 +69,7 @@ public class Game_Over : MonoBehaviour {
                     GUI.skin.label.alignment = TextAnchor.MiddleRight;
                     GUILayout.Label(element.score);
 
+                    GUI.skin.label.alignment = TextAnchor.MiddleLeft;
                     GUILayout.EndHorizontal();
                     break;
                 }
@@ -94,7 +92,6 @@ public class Game_Over : MonoBehaviour {
 
 			GUILayout.EndVertical();
 			GUILayout.EndArea();
-			
-		//}
+
 	}
 }
