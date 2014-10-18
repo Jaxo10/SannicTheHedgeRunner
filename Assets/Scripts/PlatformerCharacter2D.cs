@@ -26,6 +26,8 @@ public class PlatformerCharacter2D : MonoBehaviour
     public Vector2 scaleVector = new Vector2(0, 0.07F), moveVector = new Vector2(0, 0.04F);
     bool isDead;
     public bool audioActive;
+    public float gravScale, fallingBuffer;
+
 
     void Awake()
     {
@@ -105,8 +107,15 @@ public class PlatformerCharacter2D : MonoBehaviour
             anim.SetBool("Ground", false);
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
         }
-        else if (jumping) rigidbody2D.gravityScale = 5 + speed / 2;
-        else rigidbody2D.gravityScale = 8F + speed / 2;
+        else if (jumping)
+        {
+            if (rigidbody2D.velocity.y < fallingBuffer) {
+                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, fallingBuffer);
+                Debug.Log("buffered");
+            }
+            rigidbody2D.gravityScale = gravScale + speed / 2;
+        }
+        //else rigidbody2D.gravityScale = gravScale + speed / 2;
 
         if (slide && slideFrame < 9)
         {

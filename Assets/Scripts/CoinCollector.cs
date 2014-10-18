@@ -5,9 +5,12 @@ public class CoinCollector : MonoBehaviour {
 
     public ScoreManager scoreManager;
     bool audioActive;
+    Animator anim;
+    Rigidbody2D coinBody;
 
     void Awake()
     {
+
         //initialize if sound should be played
         if (PlayerPrefs.HasKey("music"))
         {
@@ -21,7 +24,10 @@ public class CoinCollector : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider) {
         if(collider.gameObject.tag == "Coin") {
             if(audioActive) GetComponents<AudioSource>()[1].Play();
-            GameObject.Destroy(collider.gameObject);
+            anim = collider.gameObject.GetComponent<Animator>();
+            coinBody = collider.gameObject.GetComponent<Rigidbody2D>();
+            anim.SetBool("Fade", true);
+            coinBody.AddForce(new Vector2(0, 1000));
             ++scoreManager.coins;
         }
     }
