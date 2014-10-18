@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine.Windows;
+using UnityPlayer;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -40,9 +41,38 @@ namespace Template
 			OnResize();
 			onResizeHandler = new WindowSizeChangedEventHandler((o, e) => OnResize());
 			Window.Current.SizeChanged += onResizeHandler;
-		}
+            Window.Current.VisibilityChanged += Current_VisibilityChanged;
 
-		/// <summary>
+        #if UNITY_WP_8_1
+                Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+        #endif
+        }
+
+        private void Current_VisibilityChanged(Object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
+        {
+            if (!e.Visible)
+            {
+                AppCallbacks.Instance.InvokeOnAppThread(new AppCallbackItem(() =>
+                {
+                    WindowsHandler.OnNavigatedFrom();
+                }), true);
+            }
+
+        }
+
+#if UNITY_WP_8_1
+        void HardwareButtons_BackPressed(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
+        {
+            AppCallbacks.Instance.InvokeOnAppThread(new AppCallbackItem(() =>
+            {
+                WindowsHandler.BackButtonPressed();
+            }), false);
+                
+        
+        }
+#endif
+
+        /// <summary>
 		/// Invoked when this page is about to be displayed in a Frame.
 		/// </summary>
 		/// <param name="e">Event data that describes how this page was reached.  The Parameter
