@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 using System.Text;
 //using System;
 
-#if  UNITY_METRO
+#if !UNITY_EDITOR && UNITY_METRO
 using UnityEngine.Windows;
 #else
 using System.Security.Cryptography;
@@ -30,11 +30,12 @@ public class HS_Manager : MonoBehaviour {
         }
         if (WWrequest.isDone)
         {
-            hslist = JsonConvert.DeserializeObject<HS_Object>(WWrequest.text);
             
+            #if !UNITY_EDITOR && UNITY_METRO
+            hslist = JsonConvert.DeserializeObject<HS_Object>(WWrequest.text);
+            #endif
         }
         return hslist;
-
         
 
 	}
@@ -54,7 +55,7 @@ public class HS_Manager : MonoBehaviour {
     public string ComputeHash(string s)
     {
 
-    #if  UNITY_METRO
+#if !UNITY_EDITOR && UNITY_METRO
         // Form hash
         byte[] hashBytes = Crypto.ComputeMD5Hash(System.Text.Encoding.UTF8.GetBytes(s));
         
@@ -63,14 +64,17 @@ public class HS_Manager : MonoBehaviour {
             sb.Append(b.ToString("x2").ToLower());
         return sb.ToString();
 
-    #else
+#else
         StringBuilder sb = new StringBuilder();
         MD5 md5Hasher = MD5.Create();
-        byte[] tempSource = Encoding.ASCII.GetBytes(code);
+        byte[] tempSource = Encoding.ASCII.GetBytes(s);
+        Debug.Log(tempSource[0].ToString("x2"));
+
             foreach (System.Byte b in md5Hasher.ComputeHash(tempSource))
                 sb.Append(b.ToString("x2").ToLower());
 
+            
         return sb.ToString();
-    #endif
+#endif
     }
 }

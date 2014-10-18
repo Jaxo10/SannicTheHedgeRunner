@@ -33,6 +33,7 @@ public class Create_HS : MonoBehaviour {
 
         ScrollPosition = GUILayout.BeginScrollView(ScrollPosition, false, true, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
 	    int HScounter = 0;
+        bool myScore = false;
 	
         foreach (Score element in myHS.Scores)
         {
@@ -40,16 +41,22 @@ public class Create_HS : MonoBehaviour {
           
               if(HScounter < 9 && element.uid == uid){
           	    writeHS(HScounter, element, true);
-          	    break;
+                myScore = true;
+              }
+              else if (HScounter < 9)
+              {
+                  writeHS(HScounter, element, false);
+
               }
               else if(element.uid == uid){
           	    writeHS(HScounter, element, true);
           	    break;
               }
-              else if(HScounter < 9){
-                writeHS(HScounter, element, false);
-
+              else if (HScounter >= 10 && myScore)
+              {
+                  break;
               }
+              
             
         }
 

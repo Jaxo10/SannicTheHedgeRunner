@@ -10,6 +10,7 @@ public class WindowsHandler : MonoBehaviour {
 					GameObject MO = GameObject.Find ("AMenueObject");
 					MO.AddComponent<Create_Menue> ();
 					Time.timeScale = 0;
+                    if (audio.isPlaying) audio.Stop();
 				}
 	}
 
@@ -20,6 +21,7 @@ public class WindowsHandler : MonoBehaviour {
 						MO.AddComponent<Create_Menue> ();
 
 						Time.timeScale = 0;
+                        if (audio.isPlaying) audio.Stop();
 				}
 	}	
 

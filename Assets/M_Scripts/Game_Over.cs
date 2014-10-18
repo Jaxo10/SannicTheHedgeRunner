@@ -35,6 +35,7 @@ public class Game_Over : MonoBehaviour {
         gameObject.AddComponent<HS_Manager>();
         HS_Manager manager = (HS_Manager)gameObject.GetComponent(typeof(HS_Manager));
 
+        myHS = null;
         myHS = manager.geths();
         uid = PlayerPrefs.GetString("uniqueUID");
 	}
