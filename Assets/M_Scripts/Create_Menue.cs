@@ -4,9 +4,6 @@ using System;
 
 public class Create_Menue : MonoBehaviour {
 
-	//public GUISkin MenueSkin;
-	//public bool showMenue;
-	//public Create_Setting CS;
 	
 	void Start (){
 
@@ -24,7 +21,6 @@ public class Create_Menue : MonoBehaviour {
 
 	void OnGUI (){
 
-		//if (showMenue) {
 
 			GUI.skin = MyGUIManager.GetSkin();
 					
@@ -68,6 +64,6 @@ public class Create_Menue : MonoBehaviour {
 
 			GUILayout.EndVertical();
 			GUILayout.EndArea();
-		//}
+
 	}
 }
