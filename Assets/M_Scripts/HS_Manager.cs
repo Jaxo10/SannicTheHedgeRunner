@@ -3,16 +3,12 @@ using System.Collections;
 using System.Text;
 using MiniJSON;
 using System.Collections.Generic;
-<<<<<<< HEAD
-using UnityEngine.Windows.Crypto;
-=======
+
 #if UNITY_WINRT
 using UnityEngine.Windows;
 #else
 using System.Security.Cryptography;
 #endif
-
->>>>>>> origin/master
 
 public class HS_Manager : MonoBehaviour {
 
