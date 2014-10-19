@@ -25,8 +25,6 @@ public class Game_Over : MonoBehaviour {
 	void Start()
 	{
 		if (!PlayerPrefs.HasKey("name")) {
-				//showOver = false;
-				//Nam.showName = true;
 			
 				gameObject.AddComponent<Name> ();
 				Destroy (this);
@@ -56,36 +54,39 @@ public class Game_Over : MonoBehaviour {
 
             int rank = 0;
 
-            foreach (Score element in myHS.Scores)
+            if (myHS != null)
             {
-                rank++;
-
-                if (element.uid == uid)
+                foreach (Score element in myHS.Scores)
                 {
-                    GUILayout.BeginHorizontal();
+                    rank++;
 
-                    GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-                    GUILayout.Label(rank.ToString()+". "+element.name);
+                    if (element.uid == uid)
+                    {
+                        GUILayout.BeginHorizontal();
 
-                    GUI.skin.label.alignment = TextAnchor.MiddleRight;
-                    GUILayout.Label(element.score);
+                        GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+                        GUILayout.Label(rank.ToString() + ". " + element.name);
 
-                    GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-                    GUILayout.EndHorizontal();
-                    break;
+                        GUI.skin.label.alignment = TextAnchor.MiddleRight;
+                        GUILayout.Label(element.score);
+
+                        GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+                        GUILayout.EndHorizontal();
+                        break;
+                    }
                 }
             }
-
+            else GUILayout.Label("Failed to load scores.");
 
 			if(GUILayout.Button ("Restart")){
+                myHS = null;
 				Time.timeScale = 1;
 				Application.LoadLevel (1);
 			}
 			
 			if (GUILayout.Button ("Back")) {
-				
-				//showOver = false;
-				//CM.showMenue = true;
+
+                myHS = null;
 				Time.timeScale = 1;
 				Application.LoadLevel(0);
 

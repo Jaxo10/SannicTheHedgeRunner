@@ -34,38 +34,44 @@ public class Create_HS : MonoBehaviour {
         ScrollPosition = GUILayout.BeginScrollView(ScrollPosition, false, true, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
 	    int HScounter = 0;
         bool myScore = false;
-	
-        foreach (Score element in myHS.Scores)
-        {
-              HScounter++;
-          
-              if(HScounter < 9 && element.uid == uid){
-          	    writeHS(HScounter, element, true);
-                myScore = true;
-              }
-              else if (HScounter < 9)
-              {
-                  writeHS(HScounter, element, false);
 
-              }
-              else if(element.uid == uid){
-          	    writeHS(HScounter, element, true);
-          	    break;
-              }
-              else if (HScounter >= 10 && myScore)
-              {
-                  break;
-              }
-              
-            
+        if (myHS != null)
+        {
+            foreach (Score element in myHS.Scores)
+            {
+                HScounter++;
+
+                if (HScounter < 9 && element.uid == uid)
+                {
+                    writeHS(HScounter, element, true);
+                    myScore = true;
+                }
+                else if (HScounter < 9)
+                {
+                    writeHS(HScounter, element, false);
+
+                }
+                else if (element.uid == uid)
+                {
+                    writeHS(HScounter, element, true);
+                    break;
+                }
+                else if (HScounter >= 10 && myScore)
+                {
+                    break;
+                }
+
+
+            }
         }
+        else GUILayout.Label("Failed to load scores.");
 
         GUILayout.EndScrollView();
 
         if (GUILayout.Button("Back"))
         {
 
-
+            myHS = null;
             gameObject.AddComponent<Create_Menue>();
             Destroy(this);
         }

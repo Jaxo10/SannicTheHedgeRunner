@@ -31,9 +31,15 @@ public class HS_Manager : MonoBehaviour {
         if (WWrequest.isDone)
         {
             
-            #if !UNITY_EDITOR && UNITY_METRO
+#if !UNITY_EDITOR && UNITY_METRO
             hslist = JsonConvert.DeserializeObject<HS_Object>(WWrequest.text);
-            #endif
+#else
+            hslist = new HS_Object();
+            Score sitem = new Score();
+            sitem.name = "Fuck Unity";
+            sitem.score = "404";
+            hslist.Scores.Add(sitem);
+#endif
         }
         return hslist;
         
