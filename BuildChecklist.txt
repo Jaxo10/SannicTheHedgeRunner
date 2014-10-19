@@ -1,2 +1,0 @@
-*Copy MainPage.xaml.cs to the Shared folder
-*Check Internet in Package.appxmanifest in the Windows and Windows Phone Projects
