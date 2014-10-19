@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 //using System.Net;
 //using System.IO;
 using System.Text;
+using MiniJSON;
+using System.Collections.Generic;
 //using System;
 
-#if !UNITY_EDITOR && UNITY_METRO
+//#if !UNITY_EDITOR && UNITY_METRO
 using UnityEngine.Windows;
-#else
+/*#else
 using System.Security.Cryptography;
-using System.Collections.Generic;
-#endif
+#endif*/
 
 public class HS_Manager : MonoBehaviour {
 
@@ -32,7 +33,7 @@ public class HS_Manager : MonoBehaviour {
         if (WWrequest.isDone)
         {
             
-#if !UNITY_EDITOR && UNITY_METRO
+/*#if !UNITY_EDITOR && UNITY_METRO
             hslist = JsonConvert.DeserializeObject<HS_Object>(WWrequest.text);
 #else
             hslist = new HS_Object();
@@ -42,7 +43,25 @@ public class HS_Manager : MonoBehaviour {
             
             hslist.Scores = new List<Score>();
             hslist.Scores.Add(sitem);
-#endif
+#endif*/
+
+            var deserialized = Json.Deserialize(WWrequest.text) as Dictionary<string, object>;
+            List<object> TheScores = (List<object>) deserialized["Scores"];
+            List<Score> MyScores = new List<Score>();
+
+            for (int i = 0; i < TheScores.Count; i++)
+            {
+                Dictionary<string,object> TheScoreObject = TheScores[i] as Dictionary<string,object>;
+                var MyScoreObject = new Score();
+
+                MyScoreObject.name = (string) TheScoreObject["name"];
+                MyScoreObject.score = (string) TheScoreObject["score"];
+                MyScoreObject.uid = (string)TheScoreObject["uid"];
+                MyScores.Add(MyScoreObject);
+            }
+
+            hslist = new HS_Object();
+            hslist.Scores = MyScores;
         }
         return hslist;
         
@@ -64,7 +83,7 @@ public class HS_Manager : MonoBehaviour {
     public string ComputeHash(string s)
     {
 
-#if !UNITY_EDITOR && UNITY_METRO
+//#if !UNITY_EDITOR && UNITY_METRO
         // Form hash
         byte[] hashBytes = Crypto.ComputeMD5Hash(System.Text.Encoding.UTF8.GetBytes(s));
         
@@ -73,7 +92,7 @@ public class HS_Manager : MonoBehaviour {
             sb.Append(b.ToString("x2").ToLower());
         return sb.ToString();
 
-#else
+/*#else
         StringBuilder sb = new StringBuilder();
         MD5 md5Hasher = MD5.Create();
         byte[] tempSource = Encoding.ASCII.GetBytes(s);
@@ -83,6 +102,6 @@ public class HS_Manager : MonoBehaviour {
 
             
         return sb.ToString();
-#endif
+#endif*/
     }
 }
