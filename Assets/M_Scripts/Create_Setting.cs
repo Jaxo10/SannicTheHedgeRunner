@@ -3,10 +3,7 @@ using System.Collections;
 
 public class Create_Setting : MonoBehaviour {
 	
-	//public GUISkin MenueSkin;
-	//public bool showSettings;
 	//public int difficulty;
-	//public Create_Menue CM;
 	public bool toggleMusic;
 	public string playerName;
 
@@ -50,7 +47,7 @@ public class Create_Setting : MonoBehaviour {
 
 				
 				//PlayerPrefs.SetInt("dif", difficulty);
-				PlayerPrefs.SetString("name", playerName);
+				if(!(playerName.Equals(""))) PlayerPrefs.SetString("name", playerName);
 				if(toggleMusic) PlayerPrefs.SetInt("music", 1);
 				else PlayerPrefs.SetInt("music", 0);
 

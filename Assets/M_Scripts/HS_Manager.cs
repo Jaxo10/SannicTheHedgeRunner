@@ -14,7 +14,14 @@ public class HS_Manager : MonoBehaviour {
 
 	public HS_Object geths () {
 
-        WWW WWrequest = new WWW("http://motes.at/hrunnerhs.php?action=geths");
+        Dictionary<string,string> MyresponseHeaders = new Dictionary<string,string>();
+        MyresponseHeaders.Add("Cache-Control", "no-cache, no-store, must-revalidate");
+        MyresponseHeaders.Add("Pragma", "no-cache");
+        MyresponseHeaders.Add("Expires", "0");
+
+        WWW WWrequest = new WWW("http://motes.at/hrunnerhs.php?action=geths", null, MyresponseHeaders);
+        
+
         HS_Object hslist = null;
         while (!WWrequest.isDone)
         {

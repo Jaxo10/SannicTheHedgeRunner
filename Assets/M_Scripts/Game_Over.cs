@@ -3,11 +3,6 @@ using System.Collections;
 
 public class Game_Over : MonoBehaviour {
 
-	//public GUISkin MenueSkin;
-	//public bool showOver;
-	//public Create_Menue CM;
-	//public Name Nam;
-	//public string playerName;
     HS_Object myHS;
     string uid;
     int score;
@@ -25,7 +20,7 @@ public class Game_Over : MonoBehaviour {
 	void Start()
 	{
         //Ensure that a Name is set
-		if (!PlayerPrefs.HasKey("name")) {
+		if (!PlayerPrefs.HasKey("name") || (PlayerPrefs.GetString("name").Equals(""))) {
 			
 				gameObject.AddComponent<Name> ();
 				Destroy (this);

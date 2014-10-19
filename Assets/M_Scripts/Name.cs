@@ -3,9 +3,7 @@ using System.Collections;
 
 public class Name : MonoBehaviour {
 
-	//public GUISkin MenueSkin;
-	//public bool showName;
-	//public Game_Over GO;
+
 	public string playerName;
 
 	void Start()
@@ -15,7 +13,6 @@ public class Name : MonoBehaviour {
 
     void OnGUI()
     {
-		//if (showName) {
 
 				GUI.skin = MyGUIManager.GetSkin();
 				
@@ -33,9 +30,6 @@ public class Name : MonoBehaviour {
 
 					PlayerPrefs.SetString("name", playerName);
 					PlayerPrefs.Save ();
-					
-					//showName = false;
-					//GO.showOver = true;
 
 					gameObject.AddComponent<Game_Over>();
 					Destroy(this);
@@ -45,6 +39,5 @@ public class Name : MonoBehaviour {
 				GUILayout.EndVertical();
 				GUILayout.EndArea();
 
-		//}
     }
 }
