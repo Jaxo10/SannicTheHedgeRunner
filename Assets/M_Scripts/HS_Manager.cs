@@ -3,8 +3,7 @@ using System.Collections;
 using System.Text;
 using MiniJSON;
 using System.Collections.Generic;
-using UnityEngine.Windows;
-
+using UnityEngine.Windows.Crypto;
 
 public class HS_Manager : MonoBehaviour {
 
