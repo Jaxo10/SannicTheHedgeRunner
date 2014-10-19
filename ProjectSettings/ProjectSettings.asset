@@ -152,9 +152,9 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   metroPackageName: HedgeRunner
   metroPackageLogo: Assets/Icons/Icon50.png
-  metroPackageLogo140: 
+  metroPackageLogo140: Assets/Icons/Icon70.png
   metroPackageLogo180: 
-  metroPackageLogo240: 
+  metroPackageLogo240: Assets/Icons/Icon120.png
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
@@ -162,7 +162,7 @@ PlayerSettings:
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: A simple jump and run game.
-  metroStoreTileLogo80: 
+  metroStoreTileLogo80: Assets/Icons/Icon120.png
   metroStoreTileLogo: Assets/Icons/Icon150.png
   metroStoreTileLogo140: 
   metroStoreTileLogo180: 
