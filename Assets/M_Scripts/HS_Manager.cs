@@ -9,7 +9,7 @@ using UnityEngine.Windows.Crypto;
 #if UNITY_WINRT
 using UnityEngine.Windows;
 #else
-using System.IO;
+using System.Security.Cryptography;
 #endif
 
 >>>>>>> origin/master
