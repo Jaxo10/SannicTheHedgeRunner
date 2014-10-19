@@ -42,6 +42,8 @@ namespace Template
 			onResizeHandler = new WindowSizeChangedEventHandler((o, e) => OnResize());
 			Window.Current.SizeChanged += onResizeHandler;
             Window.Current.VisibilityChanged += Current_VisibilityChanged;
+            
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape | DisplayOrientations.LandscapeFlipped;
 
         #if UNITY_WP_8_1
                 Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
@@ -80,7 +82,6 @@ namespace Template
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
 			splash = (SplashScreen)e.Parameter;
-            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape | DisplayOrientations.LandscapeFlipped;
 			OnResize();
 		}
 
