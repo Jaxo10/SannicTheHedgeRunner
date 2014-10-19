@@ -10,6 +10,7 @@ using System.Text;
 using UnityEngine.Windows;
 #else
 using System.Security.Cryptography;
+using System.Collections.Generic;
 #endif
 
 public class HS_Manager : MonoBehaviour {
@@ -38,6 +39,8 @@ public class HS_Manager : MonoBehaviour {
             Score sitem = new Score();
             sitem.name = "Fuck Unity";
             sitem.score = "404";
+            
+            hslist.Scores = new List<Score>();
             hslist.Scores.Add(sitem);
 #endif
         }
@@ -74,7 +77,6 @@ public class HS_Manager : MonoBehaviour {
         StringBuilder sb = new StringBuilder();
         MD5 md5Hasher = MD5.Create();
         byte[] tempSource = Encoding.ASCII.GetBytes(s);
-        Debug.Log(tempSource[0].ToString("x2"));
 
             foreach (System.Byte b in md5Hasher.ComputeHash(tempSource))
                 sb.Append(b.ToString("x2").ToLower());

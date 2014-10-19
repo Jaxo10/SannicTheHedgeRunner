@@ -2,10 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class HS_Object : MonoBehaviour {
-
+public class HS_Object 
+{
     public List<Score> Scores { get; set; }
-
 
 }
 

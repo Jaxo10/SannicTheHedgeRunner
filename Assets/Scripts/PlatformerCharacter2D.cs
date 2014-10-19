@@ -72,12 +72,6 @@ public class PlatformerCharacter2D : MonoBehaviour
         GameObject MO = GameObject.Find("AMenueObject");
         MO.AddComponent<Game_Over> ();
 
-        Game_Over gameO = (Game_Over)MO.GetComponent(typeof(Game_Over));
-        GameObject GM = GameObject.Find("GameManager");
-        ScoreManager SM = (ScoreManager)GM.GetComponent(typeof(ScoreManager));
-        float score = SM.score;
-
-        gameO.GameOver((int)score);
     }
 
     void FixedUpdate()

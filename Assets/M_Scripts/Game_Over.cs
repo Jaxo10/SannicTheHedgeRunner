@@ -24,18 +24,30 @@ public class Game_Over : MonoBehaviour {
 
 	void Start()
 	{
+        //Ensure that a Name is set
 		if (!PlayerPrefs.HasKey("name")) {
 			
 				gameObject.AddComponent<Name> ();
 				Destroy (this);
 		}
 
+        //Create Highscore Manager Component
         gameObject.AddComponent<HS_Manager>();
         HS_Manager manager = (HS_Manager)gameObject.GetComponent(typeof(HS_Manager));
 
+        //Get Highscore Element
         myHS = null;
         myHS = manager.geths();
+
+        //initialize uid
         uid = PlayerPrefs.GetString("uniqueUID");
+
+        //Get the score and call GameOver to save it
+        GameObject GM = GameObject.Find("GameManager");
+        ScoreManager SM = (ScoreManager)GM.GetComponent(typeof(ScoreManager));
+        float score = SM.score;
+
+        GameOver((int)score);
 	}
 
 	void OnGUI (){
