@@ -51,12 +51,18 @@ public class HS_Manager : MonoBehaviour {
 
 	}
 	
-	public void seths (string name, int score, string UID) {
+	public HS_Object seths (string name, int score, string UID) {
         
         string code = UID + score.ToString().Substring(1);
         code = ComputeHash(code);
 
-        new WWW("http://motes.at/hrunnerhs.php?action=seths&name=" + name + "&score=" + score.ToString() + "&uid=" + UID + "&code=" + code);
+        WWW WWrequest = new WWW("http://motes.at/hrunnerhs.php?action=seths&name=" + name + "&score=" + score.ToString() + "&uid=" + UID + "&code=" + code);
+
+        while (!WWrequest.isDone)
+        {
+        }
+
+        return geths();
 	}
 
     public string ComputeHash(string s)
