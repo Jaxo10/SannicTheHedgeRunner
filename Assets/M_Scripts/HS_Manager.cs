@@ -3,7 +3,11 @@ using System.Collections;
 using System.Text;
 using MiniJSON;
 using System.Collections.Generic;
+#if UNITY_WINRT
 using UnityEngine.Windows;
+#else
+using System.IO;
+#endif
 
 
 public class HS_Manager : MonoBehaviour {
@@ -52,13 +56,16 @@ public class HS_Manager : MonoBehaviour {
     public string ComputeHash(string s)
     {
 
-        // Form hash
-        byte[] hashBytes = Crypto.ComputeMD5Hash(System.Text.Encoding.UTF8.GetBytes(s));
-        
-        StringBuilder sb = new StringBuilder();
-        foreach (System.Byte b in hashBytes)
-            sb.Append(b.ToString("x2").ToLower());
-        return sb.ToString();
+#if UNITY_WINRT
+            byte[] hashBytes = Crypto.ComputeMD5Hash(Encoding.UTF8.GetBytes(s));
+#else
+            MD5 md5Hasher = MD5.Create();
+            byte[] hashBytes = md5Hasher.ComputeHash(Encoding.UTF8.GetBytes(s));
+#endif
+            StringBuilder sb = new StringBuilder();
+            foreach (System.Byte b in hashBytes)
+                sb.Append(b.ToString("x2").ToLower());
+            return sb.ToString();
 
     }
 }

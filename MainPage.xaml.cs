@@ -80,7 +80,7 @@ namespace Template
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
 			splash = (SplashScreen)e.Parameter;
-            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape | DisplayOrientations.LandscapeFlipped;
 			OnResize();
 		}
 
