@@ -24,10 +24,9 @@ public class PlatformerCharacter2D : MonoBehaviour
     bool jump, jumping, slide;
     int slideFrame;
     public Vector2 scaleVector = new Vector2(0, 0.07F), moveVector = new Vector2(0, 0.04F);
-    bool isDead;
+    bool isDead, bigJumpPossible;
     public bool audioActive;
     public float gravScale, fallingBuffer;
-
 
     void Awake()
     {
@@ -35,7 +34,6 @@ public class PlatformerCharacter2D : MonoBehaviour
         anim = GetComponent<Animator>();
         speed = startingSpeed;
         isDead = false;
-
         //initialize if sound should be played
         if (PlayerPrefs.HasKey("music"))
         {
@@ -76,6 +74,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 
     }
 
+
+
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(MyCollider.bounds.min, groundedRadius, collideWithWhat);
@@ -101,17 +101,18 @@ public class PlatformerCharacter2D : MonoBehaviour
             if (!audio.isPlaying && audioActive) audio.Play();
         }
         else if (audio.isPlaying) audio.Stop();
-
+        
         if (grounded && jump)
         {
             anim.SetBool("Ground", false);
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+            rigidbody2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Force);
         }
         else if (jumping)
         {
+
+
             if (rigidbody2D.velocity.y < fallingBuffer) {
                 rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, fallingBuffer);
-                Debug.Log("buffered");
             }
             rigidbody2D.gravityScale = gravScale + speed / 2;
         }
