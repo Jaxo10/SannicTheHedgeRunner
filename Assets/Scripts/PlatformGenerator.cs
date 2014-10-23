@@ -7,7 +7,7 @@ public class PlatformGenerator : MonoBehaviour {
     public Transform platforms;
     public SpriteRenderer platformPrefab, coinPrefab, obstaclePrefab;
     public Transform dirt;
-    public float minPlatformHeight = 0.5F, maxPlatformHeight = 1.5F, maxYDifference = 5, distanceFactor = 2.3F, minSizeForObstacle = 6;
+    public float minPlatformHeight = 0.5F, maxPlatformHeight = 1.5F, maxYDifference = 5, distanceFactor = 2.3F, minSizeForObstacle = 3;
 
     private PlatformerCharacter2D playerController;
     private int minY;
@@ -45,11 +45,11 @@ public class PlatformGenerator : MonoBehaviour {
                     Instantiate(coinPrefab, position, new Quaternion(0, 0, 0, 0));
                 }
             }
-            if(xScale >= minSizeForObstacle && Random.value < 0.3) {
+            if(xScale >= minSizeForObstacle && Random.value < 0.5) {
                 Vector3 position = newPlatform.transform.position;
                 Vector3 extents = newPlatform.GetComponent<BoxCollider2D>().bounds.extents;
                 extents.x = xScale;
-                position.y += extents.y + 4F;
+                position.y += extents.y + (obstaclePrefab.renderer.bounds.size.y / 2);
                 position.x += Random.Range(-extents.x / 2, extents.x / 2);
                 Instantiate(obstaclePrefab, position, new Quaternion(0, 0, 0, 0));
             }

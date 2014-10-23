@@ -83,7 +83,13 @@ public class Game_Over : MonoBehaviour {
 				Time.timeScale = 1;
 				Application.LoadLevel (1);
 			}
-			
+
+            if (Input.GetButtonDown("Jump")) {
+                myHS = null;
+                Time.timeScale = 1;
+                Application.LoadLevel(1);
+            }
+
 			if (GUILayout.Button ("Back")) {
 
                 myHS = null;
