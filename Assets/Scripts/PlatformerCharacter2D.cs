@@ -139,6 +139,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" && !isDead) dead();
         else currentPlatform = collision.transform;
+
     }
 
 }

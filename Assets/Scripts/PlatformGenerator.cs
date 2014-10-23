@@ -50,7 +50,7 @@ public class PlatformGenerator : MonoBehaviour {
                 Vector3 extents = newPlatform.GetComponent<BoxCollider2D>().bounds.extents;
                 extents.x = xScale;
                 position.y += extents.y + (obstaclePrefab.renderer.bounds.size.y / 2);
-                position.x += Random.Range(-extents.x / 2, extents.x / 2);
+                position.x += Random.Range(extents.x, extents.x);
                 Instantiate(obstaclePrefab, position, new Quaternion(0, 0, 0, 0));
             }
         }
